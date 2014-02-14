@@ -2,6 +2,7 @@ package com.hans.runner;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -9,12 +10,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 
 public class HansMobile implements ApplicationListener {
 	private OrthographicCamera camera;
@@ -30,7 +31,14 @@ public class HansMobile implements ApplicationListener {
 		float w = Gdx.graphics.getWidth();
 		float h = Gdx.graphics.getHeight();
 		
-		camera = new OrthographicCamera(30.0f, 20.0f);/*
+		camera = new OrthographicCamera(w, h);
+		camera.position.set(camera.viewportWidth * .5f, camera.viewportHeight * .5f, 0f);
+		camera.update();
+		batch = new SpriteBatch();
+
+		
+		
+		/*
 		batch = new SpriteBatch();
 		
 		texture = new Texture(Gdx.files.internal("data/libgdx.png"));
@@ -87,10 +95,10 @@ public class HansMobile implements ApplicationListener {
 
 	@Override
 	public void render() {		
-		/*
+
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-		
+		/*
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		sprite.draw(batch);
@@ -98,6 +106,7 @@ public class HansMobile implements ApplicationListener {
 		*/
 		
 		debugRenderer.render(world, camera.combined);
+		camera.update();
 
 		world.step(1/60f, 6, 2);
 
