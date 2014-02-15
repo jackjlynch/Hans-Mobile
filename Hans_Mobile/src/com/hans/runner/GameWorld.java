@@ -3,10 +3,10 @@ package com.hans.runner;
 import com.badlogic.gdx.utils.Array;
 
 public class GameWorld {
-	private Array<GameObject> objects;
+	private Array<Entity> entities;
 	
 	GameWorld() {
-		objects = new Array<GameObject>();
+		entities = new Array<Entity>();
 	}
 
 }

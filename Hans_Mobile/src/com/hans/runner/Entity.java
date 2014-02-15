@@ -3,13 +3,13 @@ package com.hans.runner;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.physics.box2d.Body;
 
-public class GameObject {
+public class Entity {
 	private int x;
 	private int y;
 	private Texture sprite;
 	private Body physicsObject;
 	
-	GameObject(int x, int y, Texture sprite, Body physicsObject) {
+	Entity(int x, int y, Texture sprite, Body physicsObject) {
 		this.x = x;
 		this.y = y;
 		this.sprite = sprite;
