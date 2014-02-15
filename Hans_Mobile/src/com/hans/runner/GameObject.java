@@ -42,7 +42,8 @@ public class GameObject {
 	}
 	
 	public void update() {
-		x = physicsObject.getPosition() //TODO: convert vector to x/y coordinates
+		x = (int) physicsObject.getPosition().x;
+		y = (int) physicsObject.getPosition().y;
 	}
 	
 
