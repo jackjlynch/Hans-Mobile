@@ -18,8 +18,8 @@ public class GameWorld {
 		}
 	}
 	
-	public void createEntity(int x, int y, Texture sprite, Body physicsObject) {
-		entities.add(new Entity(x, y, sprite, physicsObject));
+	public void createEntity(Texture sprite, Body physicsObject) {
+		entities.add(new Entity(sprite, physicsObject));
 	}
 	
 	public void draw(SpriteBatch batch) {

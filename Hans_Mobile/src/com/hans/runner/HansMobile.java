@@ -56,7 +56,7 @@ public class HansMobile implements ApplicationListener {
 		Fixture fixture = body.createFixture(fixtureDef);
 		circle.dispose();
 		Texture testSprite = new Texture(Gdx.files.internal("data" + File.separator + "HanzWalkFinalized0002.bmp"));
-		test.createEntity(100, 300, testSprite, body);
+		test.createEntity(testSprite, body);
 		
 		// Create our body definition
 		BodyDef groundBodyDef =new BodyDef();  

@@ -9,11 +9,10 @@ public class Entity {
 	private Texture sprite;
 	private Body physicsObject;
 	
-	Entity(int x, int y, Texture sprite, Body physicsObject) {
-		this.x = x;
-		this.y = y;
+	Entity(Texture sprite, Body physicsObject) {
 		this.sprite = sprite;
 		this.physicsObject = physicsObject;
+		this.update();
 	}
 	
 	public int getX() {
