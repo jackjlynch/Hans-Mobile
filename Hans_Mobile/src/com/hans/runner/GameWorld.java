@@ -14,7 +14,7 @@ public class GameWorld {
 	
 	public void update() {
 		for(Entity e : entities) {
-			e.update();
+			e.update();	//update all entities
 		}
 	}
 	
