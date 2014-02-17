@@ -99,7 +99,7 @@ public class HansMobile implements ApplicationListener {
 		
 		camera.update();
 
-		world.step(Gdx.graphics.getDeltaTime(), 6, 2); //update physics world
+		world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
 		test.update();
 
 	}

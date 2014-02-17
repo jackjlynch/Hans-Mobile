@@ -25,7 +25,7 @@ public class GameWorld {
 	public void draw(SpriteBatch batch) {
 		batch.begin();
 		for(Entity e : entities) { //draw sprites
-		batch.draw(e.getSprite(), e.getX(), e.getY());
+			batch.draw(e.getSprite(), e.getX(), e.getY());
 		}
 		batch.end();
 	}
