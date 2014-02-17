@@ -52,7 +52,7 @@ public class HansMobile implements ApplicationListener {
 		fixtureDef.shape = circle;
 		fixtureDef.density = 0.5f; 
 		fixtureDef.friction = 0.4f;
-		fixtureDef.restitution = 0.6f;
+		fixtureDef.restitution = 0f;
 		Fixture fixture = body.createFixture(fixtureDef);
 		circle.dispose();
 		Texture testSprite = new Texture(Gdx.files.internal("data" + File.separator + "HanzWalkFinalized0002.bmp"));
