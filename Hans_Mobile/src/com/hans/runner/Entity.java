@@ -42,7 +42,7 @@ public class Entity {
 	}
 	
 	public void update() {
-		x = (int) physicsObject.getPosition().x;
+		x = (int) physicsObject.getPosition().x; //update sprite's position to match physics position
 		y = (int) physicsObject.getPosition().y;
 	}
 	
