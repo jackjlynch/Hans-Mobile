@@ -239,7 +239,7 @@
 					0.5026215314865112
 				]
 			},
-			"file" : "../../business for fucks/Pear'sWorkGraphicsGale/MonsterSlayer/Default Sprite/Exports/HanzDefault0000.bmp",
+			"file" : "HanzDefault0000.bmp",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0.0, 0.0, 1, 0.0, 1, 1, 0.0, 1 ],
