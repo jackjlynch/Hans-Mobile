@@ -3,3 +3,7 @@ Hans_Mobile-android/bin/
 Hans_Mobile-html/gwt-unitCache/
 Hans_Mobile-html/war/
 Hans_Mobile/bin/
+
+*.rube
+Hans_Mobile-android\assets\maps\*.json-backups
+Hans_Mobile-android\assets\maps\*.rube-backups
