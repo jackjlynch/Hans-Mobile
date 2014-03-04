@@ -1,7 +1,5 @@
 package com.hans.runner;
 
-import java.io.File;
-
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
@@ -9,15 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.CircleShape;
-import com.badlogic.gdx.physics.box2d.Fixture;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
 import com.gushikustudios.rube.RubeScene;
 import com.gushikustudios.rube.loader.RubeSceneLoader;
@@ -39,10 +29,10 @@ public class HansMobile implements ApplicationListener {
 		float h = Gdx.graphics.getHeight();
 		
 		RubeSceneLoader loader = new RubeSceneLoader();
-	    RubeScene scene = loader.loadScene(Gdx.files.internal("data/tank.json"));
+	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/hanswithbody.json"));
 		
-		camera = new OrthographicCamera(w * 0.5f, h * 0.5f);
-		camera.position.set(50f, 0f, 0f);
+		camera = new OrthographicCamera(w * 0.005f, h * 0.005f);
+		camera.position.set(0f, 0f, 0f);
 		camera.update();
 		debugRenderer = new Box2DDebugRenderer();
 		batch = new SpriteBatch();
