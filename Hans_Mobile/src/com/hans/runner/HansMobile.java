@@ -23,20 +23,27 @@ public class HansMobile implements ApplicationListener {
 	
 	@Override
 	public void create() {
-		test = new GameWorld();
 		
 		float w = Gdx.graphics.getWidth();
 		float h = Gdx.graphics.getHeight();
 		
 		RubeSceneLoader loader = new RubeSceneLoader();
-	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/hanswithbody.json"));
+	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/hanses.json"));
+	    test = new GameWorld(scene);
+	    
+	    camera = new OrthographicCamera(w, h);
+	    camera.position.set(w / 2, h / 2, 0);
+	    camera.update();
 		
+	    /*
 		camera = new OrthographicCamera(w * 0.005f, h * 0.005f);
 		camera.position.set(0f, 0f, 0f);
 		camera.update();
 		debugRenderer = new Box2DDebugRenderer();
+		*/
 		batch = new SpriteBatch();
 		world = scene.getWorld();
+		System.out.println(scene.getImages());
 
 
 
@@ -55,17 +62,12 @@ public class HansMobile implements ApplicationListener {
 		
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-		debugRenderer.render(world, camera.combined);
+
+		test.draw(batch);
+		//debugRenderer.render(world, camera.combined);
 
 		
-/*		batch.setProjectionMatrix(camera.combined);
-		test.draw(batch);
-		
-		
-		camera.update();
-*/
 		world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
-		test.update();
 
 	}
 

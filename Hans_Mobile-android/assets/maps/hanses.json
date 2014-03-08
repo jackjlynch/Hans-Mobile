@@ -352,7 +352,7 @@
 					0.6469304561614990
 				]
 			},
-			"file" : "C:/Users/Alex/git/hans-mobile/Hans_Mobile-android/assets/images/HanzDefault0000.png",
+			"file" : "images/HanzDefault0000.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0.0, 0.0, 1, 0.0, 1, 1, 0.0, 1 ],
@@ -397,7 +397,7 @@
 					-0.0007691793143749237
 				]
 			},
-			"file" : "C:/Users/Alex/git/hans-mobile/Hans_Mobile-android/assets/images/greenboy.png",
+			"file" : "images/greenboy.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0.0, 0.0, 1, 0.0, 1, 1, 0.0, 1 ],
@@ -442,7 +442,7 @@
 					0.6469304561614990
 				]
 			},
-			"file" : "C:/Users/Alex/git/hans-mobile/Hans_Mobile-android/assets/images/HanzDefault0000.png",
+			"file" : "images/HanzDefault0000.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0.0, 0.0, 1, 0.0, 1, 1, 0.0, 1 ],
