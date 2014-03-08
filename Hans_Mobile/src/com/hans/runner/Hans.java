@@ -1,14 +1,14 @@
 package com.hans.runner;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.physics.box2d.Body;
+import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
 
 public class Hans extends Entity {
 
-	Hans(Texture sprite, Body physicsObject) {
-		super(sprite, physicsObject);
+	Hans(RubeImage image) {
+		super(image);
 		// TODO Auto-generated constructor stub
 	}
+
 	
 	
 

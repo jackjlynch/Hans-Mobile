@@ -32,7 +32,7 @@ public class HansMobile implements ApplicationListener {
 	    test = new GameWorld(scene);
 	    
 	    camera = new OrthographicCamera(w, h);
-	    camera.position.set(w / 2, h / 2, 0);
+	    camera.position.set(0f, 0f, 0);
 	    camera.update();
 		
 	    /*
@@ -64,6 +64,8 @@ public class HansMobile implements ApplicationListener {
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
 		test.draw(batch);
+		
+		camera.update();
 		//debugRenderer.render(world, camera.combined);
 
 		
