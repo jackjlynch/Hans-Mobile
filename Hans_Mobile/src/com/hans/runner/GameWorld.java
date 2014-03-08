@@ -10,7 +10,7 @@ import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
 public class GameWorld {
 	private Array<Entity> entities;
 	private RubeScene scene;
-	public static final int METERS_TO_PIXELS = 40;
+	public static final int METERS_TO_PIXELS = 64;
 	
 	GameWorld(RubeScene scene) {
 		this.scene = scene;

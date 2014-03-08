@@ -9,16 +9,14 @@ public class Entity {
 	private RubeImage image;
 	private Body physicsObject;
 	private Texture sprite;
-	
+
 	Entity(RubeImage image) {
 		this.image = image;
 		physicsObject = image.body;
 		sprite = new Texture(image.file);
 		this.update();
 	}
-	
 
-	
 	public float getX() {
 		return physicsObject.getPosition().x;
 	}
@@ -28,13 +26,18 @@ public class Entity {
 	}
 
 	public void draw(SpriteBatch batch) {
-		batch.draw(sprite, physicsObject.getPosition().x * GameWorld.METERS_TO_PIXELS, physicsObject.getPosition().y * GameWorld.METERS_TO_PIXELS);
-		//, image.center.x, image.center.y, image.width, image.height, image.scale, image.scale, image.angleInRads, 0, 0, (int) image.width, (int) image.height, image.flip, image.flip);
+		batch.draw(sprite, physicsObject.getPosition().x
+				* GameWorld.METERS_TO_PIXELS, physicsObject.getPosition().y
+				* GameWorld.METERS_TO_PIXELS, image.center.x
+				* GameWorld.METERS_TO_PIXELS, image.center.y
+				* GameWorld.METERS_TO_PIXELS, sprite.getWidth(),
+				sprite.getHeight(), image.scale, image.scale,
+				image.angleInRads, 0, 0, sprite.getWidth(), sprite.getHeight(),
+				image.flip, image.flip);
 	}
-	
+
 	public void update() {
 
 	}
-	
 
 }
