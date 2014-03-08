@@ -15,8 +15,6 @@ import com.gushikustudios.rube.loader.RubeSceneLoader;
 public class HansMobile implements ApplicationListener {
 	private OrthographicCamera camera;
 	private SpriteBatch batch;
-	private Texture texture;
-	private Sprite sprite;
 	private World world;
 	private GameWorld test;
 	Box2DDebugRenderer debugRenderer; 
@@ -43,17 +41,11 @@ public class HansMobile implements ApplicationListener {
 		*/
 		batch = new SpriteBatch();
 		world = scene.getWorld();
-		System.out.println(scene.getImages());
-
-
-
-
 	}
 
 	@Override
 	public void dispose() {
 		batch.dispose();
-		texture.dispose();
 
 	}
 
