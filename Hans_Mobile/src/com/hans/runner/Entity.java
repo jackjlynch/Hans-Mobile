@@ -28,7 +28,8 @@ public class Entity {
 	}
 
 	public void draw(SpriteBatch batch) {
-		batch.draw(sprite, physicsObject.getPosition().x, physicsObject.getPosition().y, image.center.x, image.center.y, image.width, image.height, image.scale, image.scale, image.angleInRads, 0, 0, (int) image.width, (int) image.height, image.flip, image.flip);
+		batch.draw(sprite, physicsObject.getPosition().x * GameWorld.METERS_TO_PIXELS, physicsObject.getPosition().y * GameWorld.METERS_TO_PIXELS);
+		//, image.center.x, image.center.y, image.width, image.height, image.scale, image.scale, image.angleInRads, 0, 0, (int) image.width, (int) image.height, image.flip, image.flip);
 	}
 	
 	public void update() {

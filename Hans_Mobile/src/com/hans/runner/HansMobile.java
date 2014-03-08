@@ -28,7 +28,7 @@ public class HansMobile implements ApplicationListener {
 		float h = Gdx.graphics.getHeight();
 		
 		RubeSceneLoader loader = new RubeSceneLoader();
-	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/hanses.json"));
+	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/hansX2.json"));
 	    test = new GameWorld(scene);
 	    
 	    camera = new OrthographicCamera(w, h);

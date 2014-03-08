@@ -10,13 +10,17 @@ import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
 public class GameWorld {
 	private ObjectMap<String, Entity> entities;
 	private RubeScene scene;
+	public static final int METERS_TO_PIXELS = 40;
 	
 	GameWorld(RubeScene scene) {
 		this.scene = scene;
 		entities = new ObjectMap<String, Entity>();
-		for(RubeImage r : scene.getImages()) {
-			entities.put(r.name, new Entity(r));
-		}
+		
+		if(scene.getImages() !=  null)
+			for(RubeImage r : scene.getImages()) {
+				r.file = r.file.substring(r.file.indexOf("images"));
+				entities.put(r.name, new Entity(r));
+			}
 	}
 	
 	public void update() {
