@@ -541,7 +541,7 @@
 					3.891145706176758
 				]
 			},
-			"file" : "../images/testcave.bmp",
+			"file" : "../images/testcave.png",
 			"filter" : 1,
 			"glDrawElements" : [ 0, 1, 2, 2, 3, 0 ],
 			"glTexCoordPointer" : [ 0.0, 0.0, 1, 0.0, 1, 1, 0.0, 1 ],
