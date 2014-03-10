@@ -1,5 +1,6 @@
 package com.hans.runner;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -13,7 +14,7 @@ public class Entity {
 	Entity(RubeImage image) {
 		this.image = image;
 		physicsObject = image.body;
-		sprite = new Texture(image.file);
+		sprite = new Texture(Gdx.files.internal(image.file));
 		this.update();
 	}
 
@@ -30,9 +31,10 @@ public class Entity {
 				* GameWorld.METERS_TO_PIXELS, physicsObject.getPosition().y
 				* GameWorld.METERS_TO_PIXELS, image.center.x
 				* GameWorld.METERS_TO_PIXELS, image.center.y
-				* GameWorld.METERS_TO_PIXELS, sprite.getWidth(),
-				sprite.getHeight(), image.scale, image.scale,
-				image.angleInRads, 0, 0, sprite.getWidth(), sprite.getHeight(),
+				* GameWorld.METERS_TO_PIXELS, image.width
+				* GameWorld.METERS_TO_PIXELS, image.height
+				* GameWorld.METERS_TO_PIXELS, image.scale, image.scale,
+				 physicsObject.getAngle() / (float) Math.PI * 180, 0, 0, sprite.getWidth(), sprite.getHeight(),
 				image.flip, image.flip);
 	}
 

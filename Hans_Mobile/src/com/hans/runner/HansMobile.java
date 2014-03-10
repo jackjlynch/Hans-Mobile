@@ -14,6 +14,7 @@ import com.gushikustudios.rube.loader.RubeSceneLoader;
 
 public class HansMobile implements ApplicationListener {
 	private OrthographicCamera camera;
+	private OrthographicCamera debugCamera;
 	private SpriteBatch batch;
 	private World world;
 	private GameWorld test;
@@ -26,19 +27,20 @@ public class HansMobile implements ApplicationListener {
 		float h = Gdx.graphics.getHeight();
 		
 		RubeSceneLoader loader = new RubeSceneLoader();
-	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/hansX2.json"));
+	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/trustfall.json"));
 	    test = new GameWorld(scene);
 	    
 	    camera = new OrthographicCamera(w, h);
-	    camera.position.set(0f, 0f, 0);
+	    camera.position.set(w / 2, h / 2, 0);
 	    camera.update();
-		
-	    /*
-		camera = new OrthographicCamera(w * 0.005f, h * 0.005f);
-		camera.position.set(0f, 0f, 0f);
-		camera.update();
+	    
+	    w /= GameWorld.METERS_TO_PIXELS;
+	    h /= GameWorld.METERS_TO_PIXELS;
+		debugCamera = new OrthographicCamera(w, h);
+		debugCamera.position.set(w / 2, h / 2, 0f);
+		debugCamera.update();
 		debugRenderer = new Box2DDebugRenderer();
-		*/
+
 		batch = new SpriteBatch();
 		world = scene.getWorld();
 	}
@@ -57,8 +59,7 @@ public class HansMobile implements ApplicationListener {
 
 		test.draw(batch);
 		
-		camera.update();
-		//debugRenderer.render(world, camera.combined);
+		debugRenderer.render(world, debugCamera.combined);
 
 		
 		world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
