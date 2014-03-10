@@ -27,15 +27,22 @@ public class Entity {
 	}
 
 	public void draw(SpriteBatch batch) {
-		batch.draw(sprite, physicsObject.getPosition().x
-				* GameWorld.METERS_TO_PIXELS, physicsObject.getPosition().y
-				* GameWorld.METERS_TO_PIXELS, image.center.x
-				* GameWorld.METERS_TO_PIXELS, image.center.y
-				* GameWorld.METERS_TO_PIXELS, image.width
-				* GameWorld.METERS_TO_PIXELS, image.height
-				* GameWorld.METERS_TO_PIXELS, image.scale, image.scale,
-				 physicsObject.getAngle() / (float) Math.PI * 180, 0, 0, sprite.getWidth(), sprite.getHeight(),
-				image.flip, image.flip);
+		batch.draw(
+				sprite,
+				(physicsObject.getPosition().x + image.center.x )
+						* GameWorld.METERS_TO_PIXELS,
+				(physicsObject.getPosition().y + image.center.y )
+						* GameWorld.METERS_TO_PIXELS); /*, image.width / 2
+						* GameWorld.METERS_TO_PIXELS, image.height / 2
+						* GameWorld.METERS_TO_PIXELS, image.width
+						* GameWorld.METERS_TO_PIXELS, image.height
+						* GameWorld.METERS_TO_PIXELS, 1, 1,
+				physicsObject.getAngle() / (float) Math.PI * 180, 0, 0,
+				sprite.getWidth(), sprite.getHeight(), image.flip, false); */
+		System.out.println(image.name);
+		System.out.println((physicsObject.getPosition().x + image.center.x ) * GameWorld.METERS_TO_PIXELS);
+		System.out.println((physicsObject.getPosition().y + image.center.y ) * GameWorld.METERS_TO_PIXELS);
+		System.out.println(physicsObject.getPosition().y);
 	}
 
 	public void update() {
