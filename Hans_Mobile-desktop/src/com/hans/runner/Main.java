@@ -8,8 +8,8 @@ public class Main {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
 		cfg.title = "Hans_Mobile";
 		cfg.useGL20 = false;
-		cfg.width = 1280;
-		cfg.height = 720;
+		cfg.width = 1024;
+		cfg.height = 256;
 		
 		new LwjglApplication(new HansMobile(), cfg);
 	}
