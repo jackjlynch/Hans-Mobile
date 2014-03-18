@@ -60,7 +60,7 @@ public class HansMobile implements ApplicationListener {
 		debugRenderer.render(world, debugCamera.combined);
 
 		
-		//world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
+		world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
 
 	}
 

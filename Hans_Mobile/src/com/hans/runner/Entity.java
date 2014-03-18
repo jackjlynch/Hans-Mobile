@@ -17,7 +17,7 @@ public class Entity {
 		this.image = image;
 		physicsObject = image.body;
 		sprite = new Sprite(new Texture(Gdx.files.internal(image.file)));
-		sprite.setOrigin(sprite.getWidth() / 2, sprite.getHeight() / 2);
+		sprite.setOrigin(sprite.getWidth() / 2 - image.center.x * GameWorld.METERS_TO_PIXELS, sprite.getHeight() / 2 - image.center.y * GameWorld.METERS_TO_PIXELS);
 		this.update();
 	}
 
@@ -30,6 +30,7 @@ public class Entity {
 	}
 
 	public void draw(SpriteBatch batch) {
+		sprite.setPosition((physicsObject.getPosition().x + image.center.x) * GameWorld.METERS_TO_PIXELS  - sprite.getWidth() / 2, (physicsObject.getPosition().y + image.center.y) * GameWorld.METERS_TO_PIXELS - sprite.getHeight() / 2);
 		sprite.setRotation(physicsObject.getAngle() / (float) Math.PI * 180);
 		sprite.draw(batch);
 		
