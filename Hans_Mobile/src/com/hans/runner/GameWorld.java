@@ -19,12 +19,16 @@ public class GameWorld {
 		if(scene.getImages() !=  null)
 			for(RubeImage r : scene.getImages()) {
 				r.file = r.file.substring(r.file.indexOf("images"));
-				entities.add(new Entity(r));
+				if(r.name.matches("hans"))
+					entities.add(new Hans(r));
+				else
+					entities.add(new Entity(r));
 			}
 	}
 	
 	public void update() {
-
+		for(Entity e : entities)
+			e.update();
 	}
 	
 	public void createEntity(Texture sprite, Body physicsObject) {

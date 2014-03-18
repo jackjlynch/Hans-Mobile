@@ -1,5 +1,7 @@
 package com.hans.runner;
 
+import java.util.concurrent.TimeUnit;
+
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
@@ -15,7 +17,7 @@ public class HansMobile implements ApplicationListener {
 	private OrthographicCamera debugCamera;
 	private SpriteBatch batch;
 	private World world;
-	private GameWorld test;
+	private GameWorld gameWorld;
 	Box2DDebugRenderer debugRenderer; 
 	
 	@Override
@@ -26,7 +28,7 @@ public class HansMobile implements ApplicationListener {
 		
 		RubeSceneLoader loader = new RubeSceneLoader();
 	    RubeScene scene = loader.loadScene(Gdx.files.internal("maps/trustfall.json"));
-	    test = new GameWorld(scene);
+	    gameWorld = new GameWorld(scene);
 	    
 	    camera = new OrthographicCamera(w, h);
 	    camera.position.set(w / 2, h / 2, 0);
@@ -41,6 +43,7 @@ public class HansMobile implements ApplicationListener {
 
 		batch = new SpriteBatch();
 		world = scene.getWorld();
+
 	}
 
 	@Override
@@ -55,7 +58,8 @@ public class HansMobile implements ApplicationListener {
 		Gdx.gl.glClearColor(1, 1, 1, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-		test.draw(batch);
+		gameWorld.update();
+		gameWorld.draw(batch);
 		
 		debugRenderer.render(world, debugCamera.combined);
 
