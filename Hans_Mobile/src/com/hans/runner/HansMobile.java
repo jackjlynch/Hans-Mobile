@@ -43,6 +43,8 @@ public class HansMobile implements ApplicationListener {
 
 		batch = new SpriteBatch();
 		world = scene.getWorld();
+		
+		Gdx.input.setInputProcessor(new HansInputHandler(gameWorld.getHans()));
 
 	}
 

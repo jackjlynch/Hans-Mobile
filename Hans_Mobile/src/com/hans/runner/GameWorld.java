@@ -10,6 +10,7 @@ import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
 public class GameWorld {
 	private Array<Entity> entities;
 	private RubeScene scene;
+	private Hans hans;
 	public static final int METERS_TO_PIXELS = 64;
 	
 	GameWorld(RubeScene scene) {
@@ -19,8 +20,10 @@ public class GameWorld {
 		if(scene.getImages() !=  null)
 			for(RubeImage r : scene.getImages()) {
 				r.file = r.file.substring(r.file.indexOf("images"));
-				if(r.name.matches("hans"))
-					entities.add(new Hans(r));
+				if(r.name.matches("hans")) {
+					hans = new Hans(r);
+					entities.add(hans);
+				}
 				else
 					entities.add(new Entity(r));
 			}
@@ -40,6 +43,10 @@ public class GameWorld {
 			e.draw(batch);
 		}
 		batch.end();
+	}
+
+	public Hans getHans() {
+		return hans;
 	}
 
 }
