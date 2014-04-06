@@ -11,6 +11,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.gushikustudios.rube.RubeScene;
 import com.gushikustudios.rube.loader.RubeSceneLoader;
+import com.hans.runner.input.HansInputHandler;
 
 public class HansMobile implements ApplicationListener {
 	private OrthographicCamera camera;

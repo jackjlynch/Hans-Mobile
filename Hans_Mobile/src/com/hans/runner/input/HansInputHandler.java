@@ -1,12 +1,13 @@
-package com.hans.runner;
+package com.hans.runner.input;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.hans.runner.dataobjs.Hans;
 
 public class HansInputHandler implements InputProcessor {
 	private Hans hans;
 	
-	HansInputHandler(Hans hans) {
+	public HansInputHandler(Hans hans) {
 		this.hans = hans;
 	}
 

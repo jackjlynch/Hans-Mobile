@@ -1,4 +1,4 @@
-package com.hans.runner;
+package com.hans.runner.dataobjs;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
+import com.hans.runner.GameWorld;
 
 public class Entity {
 	private RubeImage image;
@@ -13,7 +14,7 @@ public class Entity {
 	private Sprite sprite;
 
 
-	Entity(RubeImage image) {
+	public Entity(RubeImage image) {
 		this.image = image;
 		physicsObject = image.body;
 		sprite = new Sprite(new Texture(Gdx.files.internal(image.file)));

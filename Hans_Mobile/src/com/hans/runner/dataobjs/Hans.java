@@ -1,4 +1,4 @@
-package com.hans.runner;
+package com.hans.runner.dataobjs;
 
 import com.badlogic.gdx.math.Vector2;
 import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
@@ -7,7 +7,7 @@ public class Hans extends Entity {
 	private Vector2 accelerationForce;
 	private Vector2 jumpForce;
 
-	Hans(RubeImage image) {
+	public Hans(RubeImage image) {
 		super(image);
 		accelerationForce = new Vector2(0, 0);
 		jumpForce = new Vector2(0, (float) 100);

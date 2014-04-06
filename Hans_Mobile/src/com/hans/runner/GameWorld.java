@@ -6,6 +6,8 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.utils.Array;
 import com.gushikustudios.rube.RubeScene;
 import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
+import com.hans.runner.dataobjs.Entity;
+import com.hans.runner.dataobjs.Hans;
 
 public class GameWorld {
 	private Array<Entity> entities;
