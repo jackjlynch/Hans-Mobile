@@ -19,6 +19,7 @@ public class Entity {
 		physicsObject = image.body;
 		sprite = new Sprite(new Texture(Gdx.files.internal(image.file)));
 		sprite.setOrigin(sprite.getWidth() / 2 - image.center.x * GameWorld.METERS_TO_PIXELS, sprite.getHeight() / 2 - image.center.y * GameWorld.METERS_TO_PIXELS);
+		sprite.scale(- (1 - (image.height * GameWorld.METERS_TO_PIXELS) / sprite.getHeight()));
 	}
 
 	public void draw(SpriteBatch batch) {
