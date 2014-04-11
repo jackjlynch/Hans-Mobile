@@ -1,6 +1,7 @@
 package com.hans.runner.input;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector2;
 import com.hans.runner.dataobjs.Hans;
 
 public class AccelerometerInputHandler {
@@ -11,9 +12,7 @@ public class AccelerometerInputHandler {
 	}
 	
 	public void handleInput() {
-		//Log.i("x:" + Gdx.input.getAccelerometerX());
-		System.out.println("y:" + Gdx.input.getAccelerometerY());
-		System.out.println("z:" + Gdx.input.getAccelerometerZ());
+		hans.setAccelerationForce(new Vector2(Gdx.input.getAccelerometerY(), - Gdx.input.getAccelerometerX()));
 	}
 	
 }

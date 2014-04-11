@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
 import com.gushikustudios.rube.RubeScene;
 import com.gushikustudios.rube.loader.RubeSceneLoader;
+import com.hans.runner.input.AccelerometerInputHandler;
 import com.hans.runner.input.HansInputHandler;
 
 public class HansMobile implements ApplicationListener {
@@ -17,7 +18,8 @@ public class HansMobile implements ApplicationListener {
 	private SpriteBatch batch;
 	private World world;
 	private GameWorld gameWorld;
-	Box2DDebugRenderer debugRenderer; 
+	private Box2DDebugRenderer debugRenderer;
+	private AccelerometerInputHandler accelerometerInput;
 	
 	@Override
 	public void create() {
@@ -44,6 +46,7 @@ public class HansMobile implements ApplicationListener {
 		world = scene.getWorld();
 		
 		Gdx.input.setInputProcessor(new HansInputHandler(gameWorld.getHans()));
+		accelerometerInput = new AccelerometerInputHandler(gameWorld.getHans());
 
 	}
 
@@ -66,6 +69,7 @@ public class HansMobile implements ApplicationListener {
 
 		
 		world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
+		accelerometerInput.handleInput();
 
 	}
 

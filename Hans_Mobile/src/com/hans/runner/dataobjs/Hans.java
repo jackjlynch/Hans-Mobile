@@ -15,12 +15,15 @@ public class Hans extends Entity {
 
 	public void update() {
 		super.update();
-		accelerationForce.x += 0.005;
 		physicsObject.applyForce(accelerationForce, physicsObject.getPosition(), true);
 	}
 	
 	public void jump() {
 		physicsObject.applyForce(jumpForce, physicsObject.getPosition(), true);
+	}
+	
+	public void setAccelerationForce(Vector2 accelerationForce) {
+		this.accelerationForce = accelerationForce;
 	}
 	
 
