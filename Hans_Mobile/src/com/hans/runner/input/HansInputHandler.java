@@ -16,7 +16,6 @@ public class HansInputHandler implements InputProcessor {
 		// TODO Auto-generated method stub
 		if(keycode == Input.Keys.Z) {
 			hans.jump();
-			System.out.println("jump");
 			return true;
 		}
 		return false;
