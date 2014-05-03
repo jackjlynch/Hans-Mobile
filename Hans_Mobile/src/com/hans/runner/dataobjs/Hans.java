@@ -6,11 +6,14 @@ import com.gushikustudios.rube.loader.serializers.utils.RubeImage;
 public class Hans extends Entity {
 	private Vector2 accelerationForce;
 	private Vector2 jumpForce;
+	private boolean aDown;
+	private boolean dDown;
+	private
 
 	public Hans(RubeImage image) {
 		super(image);
 		accelerationForce = new Vector2(0, 0);
-		jumpForce = new Vector2(0, (float) 100);
+		jumpForce = new Vector2(0, (float) 1000);
 	}
 
 	public void update() {
@@ -24,6 +27,10 @@ public class Hans extends Entity {
 	
 	public void setAccelerationForce(Vector2 accelerationForce) {
 		this.accelerationForce = accelerationForce;
+	}
+	
+	public void move(double direction) {
+		accelerationForce.x += direction;
 	}
 	
 

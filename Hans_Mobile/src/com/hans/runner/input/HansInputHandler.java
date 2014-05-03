@@ -2,6 +2,7 @@ package com.hans.runner.input;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.math.Vector2;
 import com.hans.runner.dataobjs.Hans;
 
 public class HansInputHandler implements InputProcessor {
@@ -13,17 +14,22 @@ public class HansInputHandler implements InputProcessor {
 
 	@Override
 	public boolean keyDown(int keycode) {
-		// TODO Auto-generated method stub
-		if(keycode == Input.Keys.Z) {
+		switch(keycode) {
+		case Input.Keys.W:
 			hans.jump();
 			return true;
-		}
+		case Input.Keys.A:
+			hans.move(-0.1);
+			return true;
+		case Input.Keys.D:
+			hans.move(0.1);
+			return true;
+	}
 		return false;
 	}
 
 	@Override
 	public boolean keyUp(int keycode) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

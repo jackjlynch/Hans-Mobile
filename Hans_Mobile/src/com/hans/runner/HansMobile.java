@@ -19,7 +19,7 @@ public class HansMobile implements ApplicationListener {
 	private World world;
 	private GameWorld gameWorld;
 	private Box2DDebugRenderer debugRenderer;
-	private AccelerometerInputHandler accelerometerInput;
+//	private AccelerometerInputHandler accelerometerInput;
 	
 	@Override
 	public void create() {
@@ -46,7 +46,7 @@ public class HansMobile implements ApplicationListener {
 		world = scene.getWorld();
 		
 		Gdx.input.setInputProcessor(new HansInputHandler(gameWorld.getHans()));
-		accelerometerInput = new AccelerometerInputHandler(gameWorld.getHans());
+		//accelerometerInput = new AccelerometerInputHandler(gameWorld.getHans());
 
 	}
 
@@ -69,7 +69,7 @@ public class HansMobile implements ApplicationListener {
 
 		
 		world.step(Gdx.graphics.getDeltaTime(), 12, 4); //update physics world
-		accelerometerInput.handleInput();
+		//accelerometerInput.handleInput();
 
 	}
 
