@@ -16,7 +16,7 @@ public class HansInputHandler implements InputProcessor {
 	public boolean keyDown(int keycode) {
 		switch(keycode) {
 		case Input.Keys.W:
-			hans.jump();
+			hans.jump(true);
 			return true;
 		case Input.Keys.A:
 			hans.move(-0.1);
@@ -30,6 +30,10 @@ public class HansInputHandler implements InputProcessor {
 
 	@Override
 	public boolean keyUp(int keycode) {
+		switch(keycode) {
+		case Input.Keys.W:
+			hans.jump(false);
+		}
 		return false;
 	}
 
