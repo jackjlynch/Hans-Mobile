@@ -10,7 +10,7 @@ public class Hans extends Entity {
 	private boolean dDown;
 	private
 
-	public Hans(RubeImage image) {
+	Hans(RubeImage image) {
 		super(image);
 		accelerationForce = new Vector2(0, 0);
 		jumpForce = new Vector2(0, (float) 1000);
