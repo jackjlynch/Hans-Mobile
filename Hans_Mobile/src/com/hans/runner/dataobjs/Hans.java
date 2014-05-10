@@ -11,7 +11,7 @@ public class Hans extends Entity {
 	private boolean aDown;
 	private boolean dDown;
 	private boolean jump;
-	private double jumptime;
+	private long jumpTime;
 	private double MAX_JUMP_TIME = 500;
 
 	public Hans(RubeImage image) {
@@ -23,29 +23,37 @@ public class Hans extends Entity {
 	public void update() {
 		super.update();
 		physicsObject.applyForce(accelerationForce, physicsObject.getPosition(), true);
-		
-		if(jump)
-			if (TimeUtils.millis() - jumptime <= MAX_JUMP_TIME) {
-				jump = true;
-				physicsObject.applyForce(jumpForce.scl(Gdx.graphics.getDeltaTime()), physicsObject.getPosition(), true);
-			}
-		else
-			jump = false;
 
+		jump();
 	}
-	
-	public void jump(boolean jump) {
-		jumptime = TimeUtils.millis();
+
+	public void startJump(boolean jump) {
 		this.jump = jump;
+		if(jump) {
+			jumpTime  = TimeUtils.millis();
+		}
 	}
 	
+	public void jump() {
+		if(jump) {
+			if (TimeUtils.millis() - jumpTime <= MAX_JUMP_TIME) {
+				physicsObject.applyForce(jumpForce.scl(Gdx.graphics.getDeltaTime()), physicsObject.getPosition(), true);
+				System.out.println("jumping");
+				System.out.println(physicsObject);
+			}
+			else {
+				jump = false;
+			}
+		}
+	}
+
 	public void setAccelerationForce(Vector2 accelerationForce) {
 		this.accelerationForce = accelerationForce;
 	}
-	
+
 	public void move(double direction) {
 		accelerationForce.x += direction;
 	}
-	
+
 
 }
