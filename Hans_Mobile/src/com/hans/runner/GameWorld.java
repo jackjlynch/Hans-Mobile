@@ -50,5 +50,9 @@ public class GameWorld {
 	public Hans getHans() {
 		return hans;
 	}
+	
+	//public boolean isOnGround(Entity entity) {
+		
+	//}
 
 }
